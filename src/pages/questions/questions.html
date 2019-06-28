@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end>
+      <button ion-button icon-only solid (click)="goToAskQuestion()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Open Questions
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+  <ion-content padding id="page1">
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+        <ion-item-sliding *ngFor = "let askItem of asksmodels">
+            <ion-item color="none">
+              <p (click)="goToQuestionDetail(askItem)">{{askItem.askcategory}}</p>
+              <h1 (click)="goToQuestionDetail(askItem)">{{askItem.ask}}</h1>
+              <ion-icon item-end color="primary" name="{{askItem.favIcon}}" (click)="toggleFav(askItem)"></ion-icon>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="danger" (click)="deleteItem(askItem)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+    </ion-list>
+</ion-content>

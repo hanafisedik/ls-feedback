@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <ion-title>
+      Welcome To Liquid Studio Singapore
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+  <ion-grid>
+    <ion-row class="row">
+      <ion-col (click)="goToAskQuestionPage()" class="col" style="margin:2px; background-color:rgb(232, 235, 239); text-align: center;">
+        <img src="assets/imgs/questionmark.png" width="100%">
+        <h4>Ask A Question</h4>
+      </ion-col>
+      <ion-col (click)="goToViewQuestionsPage()" class="col" style="margin:2px; background-color:rgb(232, 235, 239); text-align: center;">
+          <img src="assets/imgs/logo.png" width="100%">
+          <h4>View All Questions</h4>
+        </ion-col>
+    </ion-row>
+    <ion-row class="row">
+        <ion-col (click)="goToGiveFeedbackPage()" class="col" style="margin:2px; background-color:rgb(232, 235, 239); text-align: center;">
+          <img src="assets/imgs/mynameisnao.png" width="100%">
+          <h4>Give Feedback</h4>
+        </ion-col>
+        <ion-col (click)="goToVotingPage()" class="col" style="margin:2px; background-color:rgb(232, 235, 239); text-align: center;">
+            <img src="assets/imgs/questionmark.png" width="100%">
+            <h4>Vote Favorite Demos</h4>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

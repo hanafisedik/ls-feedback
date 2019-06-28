@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Question Submitted
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+  <ion-list>
+    <ion-item color="none">
+      <p>{{askItem.askcategory}}</p>
+    </ion-item>
+    <ion-item color="none">
+        <h1>{{askItem.ask}}</h1>
+      </ion-item>
+      <ion-item color="none">
+          <p>{{askItem.answer}}</p>
+        </ion-item>
+  </ion-list>
+</ion-content>

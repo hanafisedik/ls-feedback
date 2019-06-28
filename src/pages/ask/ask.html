@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Ask Your Question
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+    <ion-content padding id="page1">
+      <form #submitQuestionForm="ngForm">
+        <ion-item>
+          <ion-label>
+            Got A Question? Ask here!
+          </ion-label>
+          <ion-textarea placeholder="" [(ngModel)]="asksmodels.ask" name="txtask" #askask="ngModel" required></ion-textarea>
+        </ion-item>
+        <p ion-text *ngIf="askask.invalid && submitted == true" color="danger" padding-left>
+          Please enter your question
+        </p>
+        <ion-item>
+          <ion-label>
+            Select Question Category
+          </ion-label>
+          <ion-select [(ngModel)]="asksmodels.askcategory" name="txtaskcategory">
+            <ion-option *ngFor="let cat of categories" [value]="cat">
+              {{cat}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        <button ion-button color="positive" block type="submit" (click)="onSubmit(submitQuestionForm)">
+          Submit
+        </button>
+      </form>
+  </ion-content>

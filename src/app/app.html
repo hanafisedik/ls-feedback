@@ -1,0 +1,48 @@
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        LSFeedback
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21">
+    <ion-list id="menu-list1">
+        <ion-item color="none" menuClose="" on-click="goToWelcome()" id="menu-list-item1" class="Ask A Question">
+            Home
+          </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToAsk()" id="menu-list-item1" class="Ask A Question">
+        Ask A Question
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToQuestions()" id="menu-list-item2">
+        View All Questions
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToFeedback()" id="menu-list-item16">
+        Give Feedback
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToVotingPage()" id="menu-list-item3">
+        Vote Favorite Demos
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-tabs>
+    <ion-tab tab="home">Home Content</ion-tab>
+    <ion-tab tab="settings">Settings Content</ion-tab>
+  
+    <ion-tab-bar slot="bottom">
+  
+      <ion-tab-button tab="home">
+        <ion-label>Home</ion-label>
+        <ion-icon name="home"></ion-icon>
+        <ion-badge>6</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="settings">
+        <ion-label>Settings</ion-label>
+        <ion-icon name="settings"></ion-icon>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs>
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

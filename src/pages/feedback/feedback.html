@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Enjoyed Your Tour?
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+  <img src="http://www.fccsingapore.com/sites/default/files/public/typo3_Events_image_d212b418-70d7-318e-fcad-59cb6b1b3ea7_16.jpg" width="100%" />
+  <h3>Let us know what you think of today's Liquid Studio tour!</h3>
+  <form #validationForm="ngForm">
+    <ion-item>
+      <ion-label>
+        Your Name
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="newFeedbackName" name="tbFeedbackName" #namename="ngModel" required></ion-input>
+    </ion-item>
+    <p ion-text *ngIf="namename.invalid && submitted == true" color="danger" padding-left>
+      Please enter your name
+    </p>
+    <ion-item>
+        <ion-label>
+          Your Email
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="newFeedbackEmail" name="tbFeedbackEmail" #emailemail="ngModel" required></ion-input>
+      </ion-item>
+      <p ion-text *ngIf="emailemail.invalid && submitted == true" color="danger" padding-left>
+        Please enter your email
+      </p>
+      <ion-item>
+          <ion-label>
+            Tell Us Your Feedback!
+          </ion-label>
+          <ion-textarea [(ngModel)]="newFeedbackFeedback" name="taFeedbackFeedback" #feedfeedbackback="ngModel" required></ion-textarea>
+        </ion-item>
+        <p ion-text *ngIf="feedfeedbackback.invalid && submitted == true" color="danger" padding-left>
+          Please enter your feedback
+        </p>
+        <button ion-button color="positive" on-click="addFeedback(validationForm)" (click)="addFeedback(newFeedbackName, newFeedbackEmail, newFeedbackFeedback)">
+          Submit
+        </button>
+  </form>
+</ion-content>
